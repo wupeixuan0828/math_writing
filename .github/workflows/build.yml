@@ -38,3 +38,4 @@ jobs:
         with:
           check_filenames: true
           skip: ./.git,./math_writing.pdf
+          ignore_words_file: .codespell-ignore-words.txt
