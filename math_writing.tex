@@ -1,0 +1,165 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{parskip}
+\usepackage[hidelinks]{hyperref}
+
+\geometry{margin=0.95in}
+
+\title{Mathematical Writing}
+\author{A One-Hour Lecture Based on Knuth's CS~209 Notes}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\noindent
+This handout summarises the main lessons of Donald Knuth's course on mathematical writing. Its purpose is practical: to help you write papers, theses, and reports that your readers can understand. Good mathematical writing is not decoration; it is communication. Every rule below serves that end.
+
+\section{Why Writing Matters}
+
+Mathematics is a social activity. A theorem that nobody can read is, for practical purposes, a theorem that does not exist. Knuth puts the point bluntly: the reader is a human being, not a machine. Your task is not to display cleverness but to transfer understanding.
+
+Two consequences follow. First, correctness is necessary but not sufficient: a proof can be logically flawless and still fail because no one can follow it. Second, writing is not a stage that follows the mathematics; it is part of doing the mathematics. Gaps in reasoning often appear only when you try to explain the argument to someone else.
+
+Every mathematical document has two layers: the mathematical content, which must be correct, and the presentation, which must be readable. A referee who finds a serious mathematical error will reject the paper regardless of style; a referee who finds the mathematics sound but the exposition impenetrable will also reject it. When you proofread your own work, check both grammar and mathematics.
+
+\section{The Core Rules}
+
+Knuth's minicourse opens with some rules, grouped here into four themes.
+
+\subsection{Symbols and Formulas}
+
+\begin{enumerate}[label=\arabic*., leftmargin=*]
+  \item Separate formulas by words; do not place one formula immediately after another.
+  \item Do not begin a sentence with a mathematical symbol. Introduce it with a noun first.
+  \item Avoid logical symbols such as $\therefore$, $\Rightarrow$, $\forall$, and $\exists$ in ordinary prose. Write the corresponding words. The exception is a text on logic itself.
+  \item The text before a theorem or algorithm must be a complete sentence or must end with a colon. Never leave a fragment dangling before a statement.
+  \item State theorems so that they are self-contained; a reader who jumps to the theorem should see its hypotheses.
+  \item Do not use one symbol for two objects, and keep notation consistent. Adopt conventions such as pairing $i$ with $m$ and $j$ with $n$.
+  \item Use subscripts sparingly. Avoid double subscripts and subscripts on superscripts, and do not name every element of a set unless the names are needed.
+  \item Display important formulas on their own lines, and number any formula to which you will refer later.
+\end{enumerate}
+
+\subsection{Language and Style}
+
+\begin{enumerate}[label=\arabic*., start=9, leftmargin=*]
+  \item Use ``we'' to mean author and reader thinking together; this helps you avoid the passive voice. In formal writing, avoid the first-person singular ``I''.
+  \item Read your sentences aloud. Choose among ``therefore'', ``thus'', and ``consequently'' by ear, not by habit.
+  \item Use ``that'' to complete a clause, as in ``assume that $A$ is a group''. Do not write ``We have that $x=y$''; write ``We have $x=y$''.
+  \item Vary sentence structure, but use parallel constructions for parallel ideas. Do not repeat ``this'' or ``also'' in consecutive sentences.
+  \item Do not list formulas as if you were handing in homework; connect them with prose that explains the logical chain.
+  \item Define each variable at first use, and restate important definitions in a second, complementary way.
+  \item Give the reader motivation. Explain why the next result matters before stating it. When discussing the work of others, say what is important about it, not merely that it is important.
+  \item Many readers skim a paper by reading only the prose. Replace each formula by a nonsense word and check that the sentences still make sense.
+  \item Avoid ambiguity; make sure modifiers clearly refer to the right noun.
+  \item Spell out small numbers used as adjectives, and use numerals for mathematical objects and for numbering.
+  \item Capitalise the names of numbered environments: Theorem~1, Lemma~2, Algorithm~3.
+\end{enumerate}
+
+\subsection{Punctuation and Spelling}
+
+\begin{enumerate}[label=\arabic*., start=20, leftmargin=*]
+  \item Avoid dangling participles, make pronouns agree with their antecedents, use commas only where they help, and avoid splitting infinitives unnecessarily, though the rule is not absolute.
+  \item Watch commonly misspelled words: \emph{implement}, \emph{complement}, \emph{occurrence}, \emph{dependent}, \emph{auxiliary}, \emph{feasible}, \emph{precedents}. Note that \emph{it's} means ``it is''. Modern usage writes \emph{nonnegative} and \emph{nonzero} without hyphens.
+  \item Use \emph{that} for restrictive clauses and \emph{which} for nonrestrictive clauses preceded by a comma. Distinguish \emph{less} (quantity) from \emph{fewer} (count).
+\end{enumerate}
+
+\subsection{Additional Typographic Advice}
+
+Do not overuse colons before displayed formulas; let the text flow naturally. The first paragraph is the showcase of the paper, so do not open with a dull definition of the form ``An $X$ is a $Y$''. Place ordinary English punctuation inside quotation marks, but place mathematical symbols and program strings according to logic. Avoid long strings of nouns used as modifiers, and prefer natural language to a pile of logical symbols. Humour is welcome, provided that the technical point remains clear.
+
+\section{Formatting and Language Details}
+
+When revising a draft, attend to the following. Do not overuse colons or commas. Avoid nested parentheses; if you must nest, use larger outer parentheses rather than brackets, since brackets and braces have fixed meanings in mathematics. End a proof with the Halmos box, separated from the preceding text by a space. Use boldface and full capitals sparingly; they shout at the reader. Write ordinal superscripts such as $i+1$\textsuperscript{st} in roman type, not mathematical italics. Prevent bad line breaks, and in \LaTeX\ use a tilde to bind words that must not be separated. If a formula grows too long, introduce a new symbol for a complicated subexpression; this is the ``name and conquer'' principle. Reduce unnecessary quotation marks and subscripts, and name modules and definitions clearly. Use a low ellipsis between commas and a centred ellipsis between operators, with appropriate space around each. In mathematical papers, write indices as subscripts rather than array indices, write $ab$ rather than $a*b$, and distinguish an element from a component.
+
+The order of a proof should match the order of the definitions and examples that precede it, and cases should appear in a natural order. Choose words precisely: ``not nonincreasing'' is not the same as ``strictly increasing''. Use the present tense for eternal mathematical facts and the past tense only for superseded results. Prefer ``To prove $X$, suppose the contrary'' to ``Assume by contradiction that''. Add signpost sentences, vary your connectives, and make sure every pronoun has a clear antecedent.
+
+\section{Writing, Revising, and Proofreading}
+
+Knuth writes first drafts by hand with a pencil, polishes the prose as he types it, and then sets it in \TeX. He revises many times. Nilsson produced at least five formal drafts of his chapter, and Hoare revised a single paper on algorithms more than a dozen times over two years. It is sometimes right to discard a draft entirely and start again. A professional designer and copy editor are valuable, so do not rely solely on your own typesetting. Choose a font designed for mathematics, and distinguish text digits from mathematical digits.
+
+During proofreading, remember that a displayed formula must never be split across a page break. If there is not enough room, add a sentence so that the whole formula moves to the next page. Distinguish the four horizontal strokes:
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+Name & Symbol & Use \\
+\midrule
+hyphen & - & compound words \\
+en-dash & -- & ranges, as in lines 10--18 \\
+minus & $-$ & mathematical subtraction \\
+em-dash & --- & interruption in prose \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Proofreading also means checking the mathematics. Knuth gives the example of an author who wrote that $0^0$ is undefined because $x^0$ and $0^x$ have different limits as $x \to 0$. The argument is flawed, since $0^x$ has no real meaning for negative $x$. The correct statement restricts $x$ to positive values, that is, $x \to 0^+$.
+
+When the same equation can be written in several equivalent ways, choose the form that is easiest to read. For integrals, decide whether to stack the limits or place them to the side, and keep the choice consistent. Avoid tall stacked fractions in exponents; write $(1+x)/y$ instead. Long formulas may be reformulated with a new symbol rather than broken awkwardly across lines. Exercises are the hardest form of mathematical writing because they lack context; they must be slightly redundant to avoid ambiguity. If you borrow an exercise, cite its source, and note that answers may relax the usual rules and may even begin with a symbol.
+
+\section{Reference Books}
+
+Knuth recommends keeping the \emph{Oxford English Dictionary}, the \emph{American Heritage Dictionary}, the \emph{Longman Dictionary of Contemporary English}, Roget's thesaurus, and a dictionary of English usage on your desk. Choose either American or British spelling and keep it consistent; switch only when discussing a proper name from the other country.
+
+\section{Algorithms and Literate Programming}
+
+For readers who write algorithms or programs, there is a tension between real programming languages and pure English. Knuth's style in \emph{The Art of Computer Programming} resembles a theorem, with numbered steps, a flow chart, and invariant comments. Others use a pidgin language, such as the pidgin Algol of Aho, Hopcroft, and Ullman.
+
+Knuth's deeper claim is that a program is also a work of literature. In \emph{literate programming}, prose comes first and code is subordinate; the WEB system produces a typeset document and a compilable program from one source file. Order modules by human understanding, not by the compiler. Keep each module short, give it a title in the imperative or declarative mood, and begin with a high-level explanation. Name data with nouns and procedures with verbs, keep terminology consistent, declare variables near their use, and put error handling in separate modules.
+
+\section{User Manuals}
+
+For readers who write documentation or user manuals, the main danger is forgetting what it is like not to know the terminology; words such as ``menu'' and ``scroll'' are jargon to a beginner. A good manual begins with an overview, then gives step-by-step instructions in short sentences, with illustrations. It tells the user how to recover from errors and how to exit, replaces jargon with ordinary words, and prefers examples to long descriptions. It does not pile up definitions, does not set commands in full capitals, and does not omit error handling.
+
+\section{Proofs and Refereeing}
+
+For readers who submit papers or serve as referees, the proof stage and the review stage deserve special attention. At the proof stage, check everything: not only the text but also mathematical symbols, formulas, citations, and figure numbers. Publishers introduce unexpected changes, sometimes distorting symbols or introducing mathematical errors. Reference lists are especially fragile; Berlekamp found that nearly half of the bibliographic entries in a body of coding-theory literature contained errors.
+
+A referee is not merely an adviser to the editor; a referee is also a teacher whose goal is to help the author improve the paper. The first criterion is originality: does the paper genuinely add to knowledge? When choosing a journal, look at the quality of its referees rather than at the height of its barrier to entry. Knuth once sent the same manuscript to several referees and found that their judgments differed widely. Do not begin a report with grammatical complaints if the mathematics is poor; if the mathematics is valuable, address both content and style. Referee, author, and editor are collaborators, not adversaries. Some journals publish without refereeing, which carries a high risk of low quality.
+
+\section{Figures, Quotations, and Editors}
+
+For readers who prepare figures, use quotations, or work with editors, three practical warnings apply. Figures visualise complex logic, but they are expensive; the effort required grows roughly as the cube of the number of illustrations. Use real data where possible; Knuth used Grimms' fairy tales as test data for his line-breaking algorithm. Do not overload a figure with detail, but retain detail that some readers will value. Tufte's \emph{The Visual Display of Quantitative Information} is a useful reference and warns against visual deception. Colour is costly in print, so reserve it for slides and use black and white in formal papers; sometimes a list of events is clearer than a diagram.
+
+Quotations reinforce an idea and create associations, but do not pile them up to display erudition. To find a quotation, consult Bartlett's familiar quotations, the \emph{Oxford English Dictionary}, an index of works, or a full-text search. You may quote yourself on occasion. Knuth once tried to trace the origin of ``God is in the details'' and found the attribution disputed. A good quotation sets the tone of a chapter, but you must respect its context. Knuth is fond of short humorous verses; one expresses the road to wisdom as follows: err and err and err again, but less and less and less.
+
+Knuth's experience with \emph{Scientific American} illustrates the tension between popular editing and mathematical precision. The editors rewrote whole sentences, replaced words, and even introduced typographical errors, and the correspondence that followed corrected symbols, the empty-set sign, floor brackets, and formula layout. Popular editors will reshape a manuscript substantially, and the author must defend mathematical rigour while remaining accessible.
+
+\section{Models of Good Writing and Guest Lectures}
+
+Read widely. Study the writing of Herb Wilf, Jeff Ullman, Leslie Lamport, Nils Nilsson, and the paper by Garey, Graham, and Johnson. Lamport has written a paper in the form of a dialogue and a report in a structured style; Knuth wrote \emph{Surreal Numbers} entirely as a dialogue, in a single week in Norway. Metaphors can help, as when a tree is compared to a jellyfish with stems, polyps, and tentacles, but once a metaphor becomes standard terminology, weigh the cost of naming. The term ``NP-complete'' was chosen by a vote, and the name was still being changed at the proof stage.
+
+Van Leunen traced the dispute over \emph{hopefully}, whose traditional meaning is ``in a hopeful manner'' but whose modern use as a sentence adverb means ``it is to be hoped''. She also described the strict enforcement of the \emph{which}--\emph{that} rule at \emph{The New Yorker}. Wilf, as editor of the \emph{American Mathematical Monthly}, stressed that the opening of a paper must capture the reader at once; the title, first sentence, and first paragraph are decisive. Set key conclusions in bold so that a skimming reader will see them, and give motivation without excess. Do not begin with a bare ``Consider the following''. He recommended P\'olya and Szeg\H{o}, \emph{Problems and Theorems in Analysis}; Hardy and Wright, \emph{An Introduction to the Theory of Numbers}; and Rudin, \emph{Principles of Mathematical Analysis}. A good style chats before the proof, writes the proof tightly, and discusses consequences afterwards.
+
+Ullman gave a humorous account of the economics of textbook writing, warning that one should not expect to become rich. Find a co-author to offset your idiosyncrasies, write many examples beginning with simple ones, and review each chapter in the evening while you still remember what was difficult. Place definitions near their use, avoid ambiguous ``this'', state the type of each variable, and do not use complicated machinery for display. Cite external material rather than deriving everything from scratch, and use analogies with care. Ideas are not protected by copyright, but their expression is; imitating a table of contents is not plagiarism, but copying passages verbatim is. Do not spend more than a year on a book.
+
+Lamport identifies two bad motives for writing: to increase one's publication count, and to produce a paper for a particular conference regardless of its quality. The good motive is genuine excitement about the work. Writing, like playing the piano, improves through extensive reading of good texts, including literary ones. First decide who your audience is, and whether the work belongs in a journal, a conference, a technical report, or a drawer. A journal paper is polished and permanent; a conference paper may be rougher; a technical report records work in progress. Do not be seduced by a clever conceit; it may inspire the writing but need not survive into the final draft. One solid example is worth more than pages of abstraction, and it tests the theory. Attend to structure before typography, and encapsulate complicated notation in macros. A structured proof, in which each conclusion is paired with a reason, resembles a table of geometry exercises; even if the final proof is written in paragraphs, the table helps you find logical gaps.
+
+Nilsson compared writing to artistic composition and offered the formula: composition equals organisation plus simplification. Writing is both an art and a form of communication, and art requires training. Good work is not written once; it is rewritten. As the saying goes, a work is never finished, only abandoned. Obtain criticism from others, because you cannot see all of your own faults, and read widely to sharpen your judgment. Simulate a reader in your head, and imagine several critical daemons that detect where a reader will stumble. Mastering the material deepens your understanding. Simplify where you can, sacrificing local detail to build intuition, then restore the full rigour. As Einstein said, everything should be made as simple as possible, but not simpler. Do not copy old text blindly; a new occasion has new emphases. Pursue excellence, but accept that perfection is unreachable.
+
+\section{Revising Student Papers and Punctuation Debates}
+
+The relative pronoun \emph{which} is often misused in restrictive clauses; in class, each student writes a correct pair of \emph{which} and \emph{that} sentences. A section title must not be a grammatical part of a sentence; remove the title and the prose should still read correctly. Terms such as ``path'' and ``walk'' are defined differently by different authors, so define them at the outset. Eliminate useless intermediate symbols; less is more. In a co-authored paper, unify terminology and do not define terms that are never used. Use the present tense for eternal mathematical facts, and distinguish a problem, whose complexity may have changed over time, from an algorithm, whose properties are eternal. Place citations in parentheses within the sentence, so that the sentence remains readable if the citation is removed. Attend to commas, to the plural of symbols, and to the ambiguity of apostrophes and subscripts. Beware of words with two meanings, such as ``left'' and ``plane''. Let examples evolve rather than presenting a scatter of unrelated cases.
+
+Van Leunen traced the history of the \emph{which}--\emph{that} distinction. In written English from the seventeenth to the nineteenth century, the two words were not strictly separated. The modern rule comes from Fowler's \emph{The King's English} and was popularised by Strunk and White. A simple test: if you can replace \emph{which} by \emph{that} and the sentence still reads well, use \emph{that}. Literary works may break the rule, but scientific and technical writing should follow it to reduce friction for the reader. Do not be dogmatic. Franklin's method, described in his autobiography, is to copy a passage, note its main points, close the book, and rewrite it from memory, then compare the result with the original; he also turned prose into verse and back again to enlarge his vocabulary.
+
+Computer-aided tools such as Stanford's old \texttt{style} and \texttt{diction} are instructive. \texttt{style} computes readability scores, average sentence and word lengths, the proportion of passive constructions, and the part of speech of each sentence's first word; it cannot understand meaning, so its output is suggestive, not authoritative. \texttt{diction} flags suspect phrases such as ``due to'', ``very'', and ``literally'', but it also misjudges mathematical idioms such as ``Theorem due to Cauchy''. Such tools prompt you to reread your text; they do not replace a human editor.
+
+Rosalie Stemer, a newspaper editor, offers practical advice. Good writing is clear, coherent, accurate, and concise. As Pascal said, I have made this letter longer only because I have not had time to make it shorter. Prefer short sentences and use semicolons with care. Watch out for ambiguous ``this'' and for the position of ``only'', which changes meaning entirely: the sentence ``I only hit him in the eye yesterday'' has eight readings depending on where ``only'' falls. Remove empty intensifiers such as ``really'', ``quite'', and ``pretty''. Distinguish \emph{alternately} from \emph{alternatively}, and \emph{prostrate} from \emph{prostate}. Keep the subject near the front of the sentence, and avoid dangling ``it''. Reading the text aloud reveals many hidden faults.
+
+\section{Paul Halmos on Mathematical Writing}
+
+Halmos organises his lecture around four pillars: semantics, syntax, symbols, and style. His two highest principles are to organise the material well and not to distract the reader. Under semantics, watch words whose meanings change, such as \emph{hopefully}, \emph{decimated}, \emph{imply} and \emph{infer}, and \emph{disinterested} and \emph{uninterested}; avoid using the noun \emph{reference} as a verb. Under syntax, remember that grammar is the logical organisation of language; Halmos rejects the old rule against ending a sentence with a preposition and warns against making the \emph{which}--\emph{that} rule into a fetish. Under symbols and punctuation, he argues for logical punctuation: in mathematical and computational writing, do not put commas and periods inside quotation marks by mere printing convention, and distinguish the word ``one'' from the numeral ``1''. Under style, reduce unnecessary ``we''; a declarative sentence, an imperative, or a titled inference can often replace the passive voice without using ``we''. Use the first-person singular sparingly in formal writing, since it can seem arrogant. Avoid proof by contradiction when a direct proof is available; use contradiction in your scratch work and rewrite the final proof directly. Organisation is not linear arrangement; it is the weaving of several threads. His closing sentence summarises everything: anything that helps communication is good, anything that hurts is bad, and that is all he has to say.
+
+\section{Final Thoughts}
+
+Develop a voice of your own; do not copy someone else's style wholesale. Attend to typography: choose between stacked and slashed fractions, and use hyphens correctly. Debates over \emph{hopefully}, split infinitives, sentence-final prepositions, and omitted \emph{that} continue, and no rule is absolute. The purpose of a rule is to serve communication; you may break it, but you should know why. Knuth and his wife disagree about style when writing their Christmas letter, which shows that taste is personal.
+
+The whole course can be summarised in a few sentences. The first goal of mathematical writing is communication, not display. Your reader is a person, so imagine what that person already knows and where that person will stumble. A mathematical document has two layers, correct content and readable presentation, and proofreading must address both. Symbols are tools; use natural language when it is clearer. Define every variable at first use, and restate important definitions in two complementary ways. Typographic detail matters: never split a displayed formula across pages, distinguish the four horizontal strokes, and choose fractions, ellipses, and line breaks with care. Write direct proofs, add signposts, make theorems self-contained, and order the proof as the definitions and examples are ordered. Revise and rewrite; the first draft is never final. Different genres impose different constraints, so do not use one template for papers, textbooks, manuals, exercises, and referee reports. Improve by reading good prose, by deliberate practice, by reading aloud, and by seeking feedback; software can help, but it cannot replace judgment. Above all, remember that every rule is a means, not an end, and the final test is whether the writing helps the reader understand.
+
+\end{document}

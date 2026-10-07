@@ -1,0 +1,40 @@
+name: Build and Spell Check
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+
+jobs:
+  build:
+    name: Build PDF
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: math_writing.tex
+          args: -pdf -interaction=nonstopmode -halt-on-error -file-line-error
+
+      - name: Upload PDF artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: math-writing-pdf
+          path: math_writing.pdf
+          if-no-files-found: error
+
+  spellcheck:
+    name: Spell Check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run codespell
+        uses: codespell-project/actions-codespell@v2
+        with:
+          check_filenames: true
+          skip: ./.git,./math_writing.pdf
